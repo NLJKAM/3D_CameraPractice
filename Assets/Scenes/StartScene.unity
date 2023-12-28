@@ -194,8 +194,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBB58 \uB9CC\uB4E4\uC9C0 \uBAB0\uB77C\uC11C\n\uCE74\uBA54\uB77C \uC774\uB3D9\uAD6C\uD604
-    \uC5F0\uC2B5\uD560\uB824\uACE0 \uB9CC\uB4E0 \uAC83"
+  m_Text: "\uBB58 \uB9CC\uB4E4\uC9C0 \uBAB0\uB77C\uC11C \uB9CC\uB4E0\n\uAC8C\uC784
+    \uBDF0\uC5D0 \uB530\uB978\n\uCE74\uBA54\uB77C\uC640 \uD50C\uB808\uC774\uC5B4
+    \uC774\uB3D9\uAD6C\uD604 \uC5F0\uC2B5"
 --- !u!222 &109955848
 CanvasRenderer:
   m_ObjectHideFlags: 0
