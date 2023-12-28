@@ -8,6 +8,8 @@ public class UIController : MonoBehaviour
     public GameObject stateText01;
     public GameObject stateText02;
     public GameObject stateText03;
+
+    public Text stateText;
     void Start()
     {
         
@@ -16,6 +18,8 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        stateText.text = $"현 상태 : {GameManager.instance.playerMoveformNum + 1} 번";
+
         if (!GameManager.instance.changeFormDelay)
         {
             viewNum();
