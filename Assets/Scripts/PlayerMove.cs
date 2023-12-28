@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
 
     bool move = false;
     public GameObject clickEffect;
+    public GameObject firstPersonViewCamera;
     public float moveSpeed;
     void Start()
     {
@@ -32,9 +33,12 @@ public class PlayerMove : MonoBehaviour
             case 1:
                 PlayerQuarterViewMouseClick();
                 break;
+            case 2:
+                PlayerFirstPersonViewWASD(firstPersonViewCamera.transform);
+                break;
         }
     }
-    private void PlayerQuarterViewWASD()
+    private void PlayerQuarterViewWASD() //쿼터뷰 wasd 이동
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
@@ -44,21 +48,21 @@ public class PlayerMove : MonoBehaviour
 
         transform.LookAt(transform.position + moveDirection);
     }
-    private void PlayerQuarterViewMouseClick()
+    private void PlayerQuarterViewMouseClick() // 쿼터뷰 마우스 클릭이동
     {
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if(Physics.Raycast(ray, out hit, 100f))
+            if (Physics.Raycast(ray, out hit, 100f))
             {
                 destinationPos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                 dir = destinationPos - transform.position;
                 lookTarget = Quaternion.LookRotation(dir);
                 move = true;
             }
-            Destroy(Instantiate(clickEffect, destinationPos,Quaternion.identity) ,0.5f);
+            Destroy(Instantiate(clickEffect, destinationPos, Quaternion.identity), 0.5f);
         }
         if (move)
         {
@@ -66,5 +70,14 @@ public class PlayerMove : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, lookTarget, 0.25f);
             move = (transform.position - destinationPos).magnitude > 0.5f;
         }
+    }
+    private void PlayerFirstPersonViewWASD(Transform trasformangle) // 1인칭 마우스로 회전 wasd이동
+    {
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        Vector3 moveDirection = new Vector3(h, 0, v).normalized;
+        transform.eulerAngles = new Vector3(0, trasformangle.eulerAngles.y, 0);
+        transform.Translate (moveDirection * moveSpeed * Time.deltaTime);
+
     }
 }

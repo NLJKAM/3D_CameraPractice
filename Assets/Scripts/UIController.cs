@@ -10,6 +10,9 @@ public class UIController : MonoBehaviour
     public GameObject stateText03;
 
     public Text stateText;
+
+    public GameObject mainCamera;
+    public GameObject firstPersonViewCamera;
     void Start()
     {
         
@@ -29,22 +32,31 @@ public class UIController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            mainCamera.SetActive(true);
+            firstPersonViewCamera.SetActive(false);
+
             GameManager.instance.setViewNum(0);
             stateText01.SetActive(true);
 }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            mainCamera.SetActive(true);
+            firstPersonViewCamera.SetActive(false);
+
             GameManager.instance.setViewNum(1);
             stateText02.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            firstPersonViewCamera.SetActive(true);
+            mainCamera.SetActive(false);
+
             GameManager.instance.setViewNum(2);
             stateText03.SetActive(true);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+       /* else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             GameManager.instance.setViewNum(3);
-        }
+        }*/
     }
 }
