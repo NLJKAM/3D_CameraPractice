@@ -543,7 +543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353414991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -590,6 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0ac5c44cf71ae4d9b233b15664b176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickEffect: {fileID: 7793898945676814662, guid: ba416efc3e0aa6245815aa40b997bd5d, type: 3}
   moveSpeed: 30
 --- !u!1 &416348248
 GameObject:
@@ -1104,6 +1105,7 @@ GameObject:
   - component: {fileID: 629559687}
   - component: {fileID: 629559686}
   - component: {fileID: 629559685}
+  - component: {fileID: 629559689}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1196,6 +1198,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &629559689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629559684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf55fa3395685449a7cb9d23cef3a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateText01: {fileID: 511849066}
+  stateText02: {fileID: 72254702}
+  stateText03: {fileID: 621697876}
 --- !u!1 &692950002
 GameObject:
   m_ObjectHideFlags: 0
